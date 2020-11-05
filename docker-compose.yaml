@@ -1,0 +1,8 @@
+services:
+  prometheus-pushgateway-purger:
+    build:
+      context: .
+    container_name: prometheus-pushgateway-purger
+    environment:
+      PROMETHEUS_PG_URL: http://host.docker.internal:9091
+    image: jlewis42lines/prometheus-pushgateway-purger:${TAG:-latest}
